@@ -1,1 +1,28 @@
-/* Cliff to complete between 3/4 and 10/4 */
+/* File: styles.css */
+/* Author: Team Web Dev */
+/* Contains the styles for the entire website */
+
+/* Universal Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styles for Header and Navigatoin */
+h1 {
+  font: 2.5em "Times New Roman", Times, serif;
+}
+
+header {
+}
+
+header nav {
+  background-color: lightgray;
+}
+
+/* Styles for Index */
+
+/* Styles for Jobs */
+
+/* Styles for About */
+
+/* Styles for Apply */
