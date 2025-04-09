@@ -76,9 +76,10 @@ header nav a:hover {
 
 /* Styles for Index */
 #swinova-introduction {
-  background-image: url(./images/background-graphic.jpg);
+  background-image: url(./images/background-graphic.jpg); 
   color: white;
 }
+/* This image comes from https://stock.adobe.com/au/search?k=technology+background */
 
 .homepage-link {
   text-decoration: none;
