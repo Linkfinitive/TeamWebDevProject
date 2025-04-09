@@ -67,7 +67,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-items: center;
-text-align: center;
+  text-align: center;
 }
 
 /* Layouts for Apply */
