@@ -7,7 +7,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.homepage-sections, #title-and-sections {
+.homepage-sections,
+#title-and-sections {
   padding: 5px 20px;
   margin: 5px;
   border-radius: 8px;
