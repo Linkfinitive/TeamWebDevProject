@@ -7,7 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-section {
+.homepage-sections, #title-and-sections {
   padding: 5px 20px;
   margin: 5px;
   border-radius: 8px;
@@ -94,10 +94,6 @@ header nav a:hover {
 }
 
 /* Styles for Jobs */
-#open-positions-text {
-  padding: 20px 20px 0px 25px;
-  margin: 0px;
-}
 
 aside {
   border: 5px plum solid;
