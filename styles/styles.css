@@ -49,6 +49,16 @@ header nav a:hover {
 }
 
 /* Styles for Index */
+section {
+  padding: 5px 20px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+#swinova-introduction {
+  background-image: url(./images/background-graphic.jpg);
+  color: white;
+}
 
 /* Styles for Jobs */
 
