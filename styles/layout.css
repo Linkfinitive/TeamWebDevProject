@@ -3,6 +3,13 @@
 /* Contains the layouts for the entire website */
 
 /* Universal Layouts */
+body {
+  display: grid;
+  margin: 0;
+  min-height: 100vh;
+  grid-template-rows: max-content max-content 1fr;
+  align-items: end;
+}
 
 /* Layouts for Header and Navigatoin */
 header {
