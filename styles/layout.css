@@ -55,6 +55,10 @@ aside {
 }
 
 /* Layouts for About */
+#student-ids {
+  text-align: right;
+}
+
 #team-photo {
   float: right;
 }
