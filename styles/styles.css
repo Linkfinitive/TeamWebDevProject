@@ -79,6 +79,20 @@ header nav a:hover {
   color: white;
 }
 
+.homepage-link {
+  text-decoration: none;
+  color: black;
+  background-color: lightgray;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.homepage-link:hover {
+  color: white;
+  background-color: gray;
+}
+
 /* Styles for Jobs */
 
 /* Styles for About */
