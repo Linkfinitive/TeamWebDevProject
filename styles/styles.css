@@ -94,6 +94,10 @@ header nav a:hover {
 }
 
 /* Styles for Jobs */
+#open-positions-text {
+  padding: 20px 20px 0px 25px;
+  margin: 0px
+}
 
 /* Styles for About */
 
