@@ -3,6 +3,7 @@
 /* Contains the layouts for the entire website */
 
 /* Universal Layouts */
+/* Makes the footer stay at the bottom */
 body {
   display: grid;
   margin: 0;
