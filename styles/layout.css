@@ -55,5 +55,8 @@ aside {
 }
 
 /* Layouts for About */
+#team-photo {
+  float: right;
+}
 
 /* Layouts for Apply */
