@@ -45,6 +45,19 @@ header nav {
 /* Layouts for Index */
 
 /* Layouts for Jobs */
+#jobs-page-main {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+#jobs-page-main h2,
+#jobs-page-main section {
+  grid-column: 1/2;
+}
+
+aside {
+  grid-column: 2/3;
+}
 
 /* Layouts for About */
 
