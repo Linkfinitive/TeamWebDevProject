@@ -7,22 +7,124 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Styles for Header and Navigatoin */
-h1 {
-  font: 2.5em "Times New Roman", Times, serif;
+.homepage-sections,
+#title-and-sections,
+#about-page-main {
+  padding: 5px 20px;
+  margin: 5px;
+  border-radius: 8px;
 }
 
+/* Styles for Footers */
+footer {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: gray;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Styles for Header and Navigation */
 header {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: gray;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+header h1 {
+  font: bold 2.5em "Courier New", Courier, monospace;
+}
+
+#logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid lightgray;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
 }
 
 header nav {
   background-color: lightgray;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+header nav a:hover {
+  background-color: gray;
+  color: white;
 }
 
 /* Styles for Index */
+#swinova-introduction {
+  background-image: url(./images/background-graphic.jpg);
+  color: white;
+}
+/* This image comes from https://stock.adobe.com/au/search?k=technology+background */
+
+.homepage-link {
+  text-decoration: none;
+  color: black;
+  background-color: lightgray;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.homepage-link:hover {
+  color: white;
+  background-color: gray;
+}
 
 /* Styles for Jobs */
+aside {
+  border: 5px plum solid;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 /* Styles for About */
+#team-photo img {
+  border: 5px black solid;
+  border-radius: 8px;
+  width: 25vh;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#interests-table table {
+  border-radius: 8px;
+}
+
+#interests-table th,
+#interests-table td {
+  background-color: #dda0dd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#interests-table th:hover,
+#interests-table td:hover {
+  background-color: #c1a0dd;
+}
 
 /* Styles for Apply */
