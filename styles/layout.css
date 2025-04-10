@@ -56,7 +56,9 @@ aside {
 
 /* Layouts for About */
 #student-ids {
-  text-align: right;
+  list-style-position: inside;   /* Ensures bullet is inside the list box */
+  text-align: right;             /* Align text to the right */
+  padding-right: 2rem;           /* Adds spacing from the right edge */
 }
 
 #team-photo {
