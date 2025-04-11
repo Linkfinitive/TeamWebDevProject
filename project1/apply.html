@@ -61,7 +61,7 @@
           />
           <br />
 
-          <label for="date">Date of Birth:</label>
+          <label for="dob">Date of Birth:</label>
           <input type="date" id="dob" name="dob" required />
         </fieldset>
 
@@ -79,9 +79,9 @@
 
         <fieldset>
           <legend>Address</legend>
-          <label for="State">State:</label>
-          <select id="State" name="state">
-            <option value="blank">Please Select</option>
+          <label for="state">State:</label>
+          <select id="state" name="state">
+            <option value="">Please Select</option>
             <option value="vic">Victoria</option>
             <option value="nsw">New South Wales</option>
             <option value="qld">Queensland</option>
@@ -92,7 +92,7 @@
             <option value="act">Australia Capital Territory</option>
           </select>
 
-          <label for="pc">Post Code:</label>
+          <label for="pc">Postcode:</label>
           <input
             type="text"
             id="pc"
@@ -126,7 +126,7 @@
             type="text"
             id="pnum"
             name="PNum"
-            placeholder="00000000"
+            placeholder="0000000000"
             required
             pattern="[0-9\s]{8,12}"
           />
