@@ -1,126 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="TeamWebDev" />
-  <meta name="description" content="WRITE DESCRIPTION HERE" />
-  <meta name="keywords" content="WRITE KEYWORDS HERE" />
-  <link rel="stylesheet" href="../styles/styles.css" />
-  <link rel="stylesheet" href="../styles/layout.css" />
-  <title>Swinburne Data Solutions</title>
-</head>
-<body>
-  <header>
-    <image id="logo" src="/images/logo.png" alt="The Team Web Dev Logo" />
-    <h1>Swinova Tech</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="jobs.html">Careers</a>
-      <a href="apply.html">Apply</a>
-      <a href="about.html">About</a>
-      <a href="">Email Us</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="TeamWebDev" />
+    <meta name="description" content="WRITE DESCRIPTION HERE" />
+    <meta name="keywords" content="WRITE KEYWORDS HERE" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <title>Swinburne Data Solutions</title>
+  </head>
+  <body>
+    <header>
+      <image id="logo" src="/images/logo.png" alt="The Team Web Dev Logo" />
+      <h1>Swinova Tech</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Careers</a>
+        <a href="apply.html">Apply</a>
+        <a href="about.html">About</a>
+        <a href="mailto:info@swinovatech.com.au">Email Us</a>
+      </nav>
+    </header>
 
-  <main>
-    <h2>Application Form</h2>
-    <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
-      <fieldset>
-        <label for="refnum">Job Reference Number:</label>
-        <select id="refnum" name="RefNum">
-          <option value="blank">Please Select</option>
-          <option value="1">JVC27-6498 </option>
-          <option value="2">JVC27-4755 </option>
-        </select>
-      </fieldset>
+    <main>
+      <h2>Application Form</h2>
+      <form
+        action="https://mercury.swin.edu.au/it000000/formtest.php"
+        method="post"
+      >
+        <fieldset>
+          <label for="refnum">Job Reference Number:</label>
+          <select id="refnum" name="RefNum">
+            <option value="blank">Please Select</option>
+            <option value="1">JVC27-6498</option>
+            <option value="2">JVC27-4755</option>
+          </select>
+        </fieldset>
 
-      <fieldset>
-        <legend>Personal Information</legend>
-        <label for="name">First Name:</label>
-        <input type="text" id="name" name="Name" maxlength="20" pattern="^[A-Za-z\d]*$" required>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="name">First Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="Name"
+            maxlength="20"
+            pattern="^[A-Za-z\d]*$"
+            required
+          />
 
-        <label for="lname">Last Name:</label>
-        <input type="text" id="lname" name="Lname" maxlength="20" pattern="^[A-Za-z\d]*$" required>
-        <br>
+          <label for="lname">Last Name:</label>
+          <input
+            type="text"
+            id="lname"
+            name="Lname"
+            maxlength="20"
+            pattern="^[A-Za-z\d]*$"
+            required
+          />
+          <br />
 
-        <label for="date">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required />      </fieldset>
+          <label for="date">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+        </fieldset>
 
-      <fieldset>
-        <legend>Gender</legend>
-        <input type="radio" id="male" name="Gender" value="Male" checked>
-        <label for="male">Male</label>
+        <fieldset>
+          <legend>Gender</legend>
+          <input type="radio" id="male" name="Gender" value="Male" checked />
+          <label for="male">Male</label>
 
-        <input type="radio" id="female" name="Gender" value="Female">
-        <label for="female">Female</label>
+          <input type="radio" id="female" name="Gender" value="Female" />
+          <label for="female">Female</label>
 
-        <input type="radio" id="other" name="Gender" value="Other">
-        <label for="other">Other</label>
-      </fieldset>
+          <input type="radio" id="other" name="Gender" value="Other" />
+          <label for="other">Other</label>
+        </fieldset>
 
-      <fieldset>
-        <legend>Address</legend>
-        <label for="State">State:</label>
-        <select id="State" name="state">
-          <option value="blank">Please Select</option>
-          <option value="vic">Victoria</option>
-          <option value="nsw">New South Wales</option>
-          <option value="qld">Queensland</option>
-          <option value="nt">Northern Territory</option>
-          <option value="wa">Western Australia</option>
-          <option value="sa">South Australia</option>
-          <option value="tas">Tasmania</option>
-          <option value="act">Australia Capital Territory</option>
-        </select>
+        <fieldset>
+          <legend>Address</legend>
+          <label for="State">State:</label>
+          <select id="State" name="state">
+            <option value="blank">Please Select</option>
+            <option value="vic">Victoria</option>
+            <option value="nsw">New South Wales</option>
+            <option value="qld">Queensland</option>
+            <option value="nt">Northern Territory</option>
+            <option value="wa">Western Australia</option>
+            <option value="sa">South Australia</option>
+            <option value="tas">Tasmania</option>
+            <option value="act">Australia Capital Territory</option>
+          </select>
 
-        <label for="pc">Post Code:</label>
-        <input type="text" id="pc" name="PCode" placeholder="0000" required pattern="\d{4}">
+          <label for="pc">Post Code:</label>
+          <input
+            type="text"
+            id="pc"
+            name="PCode"
+            placeholder="0000"
+            required
+            pattern="\d{4}"
+          />
 
-        <label for="adr">Address:</label>
-        <input type="text" id="adr" name="Address" required maxlength="40">
+          <label for="adr">Address:</label>
+          <input type="text" id="adr" name="Address" required maxlength="40" />
 
-        <label for="town">Town or Suburb:</label>
-        <input type="text" id="town" name="Town" required maxlength="40">
-      </fieldset>
+          <label for="town">Town or Suburb:</label>
+          <input type="text" id="town" name="Town" required maxlength="40" />
+        </fieldset>
 
-      <fieldset>
-        <legend>Details</legend>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="Email" placeholder="example@example.com" required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <fieldset>
+          <legend>Details</legend>
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="Email"
+            placeholder="example@example.com"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          />
 
-        <label for="pnum">Phone Number:</label>
-        <input type="text" id="pnum" name="PNum" placeholder="00000000" required pattern="[0-9\s]{8,12}">
-      </fieldset>
+          <label for="pnum">Phone Number:</label>
+          <input
+            type="text"
+            id="pnum"
+            name="PNum"
+            placeholder="00000000"
+            required
+            pattern="[0-9\s]{8,12}"
+          />
+        </fieldset>
 
-      <fieldset>
-        <legend>Qualifications</legend>
-        <label><input type="checkbox" name="qualifications[]" id="qual2" value="1"> A Bachelor's degree in a relevant field</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual3" value="2"> Proficiency in basic job tools (e.g., SQL, Python, cybersecurity tools)</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual4" value="3"> Valid Professional certification (CISSP, CEH, etc.)</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual5" value="4"> Experience with cloud-based solutions (AWS, Azure, Google Cloud)</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual6" value="5"> Strong analytical and problem-solving skills</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual8" value="6"> Familiarity with data visualisation tools (only for Data Analyst)</label><br>
-        <label><input type="checkbox" name="qualifications[]" id="qual9" value="7"> Experience with penetration testing (only for Cybersecurity Specialist)</label><br>
-        
-        <br>
+        <fieldset>
+          <legend>Qualifications</legend>
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual2"
+              value="1"
+            />
+            A Bachelor's degree in a relevant field</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual3"
+              value="2"
+            />
+            Proficiency in basic job tools (e.g., SQL, Python, cybersecurity
+            tools)</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual4"
+              value="3"
+            />
+            Valid Professional certification (CISSP, CEH, etc.)</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual5"
+              value="4"
+            />
+            Experience with cloud-based solutions (AWS, Azure, Google
+            Cloud)</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual6"
+              value="5"
+            />
+            Strong analytical and problem-solving skills</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual8"
+              value="6"
+            />
+            Familiarity with data visualisation tools (only for Data
+            Analyst)</label
+          ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual9"
+              value="7"
+            />
+            Experience with penetration testing (only for Cybersecurity
+            Specialist)</label
+          ><br />
 
-        <label for="extra">Other Skills:</label><br>
-        <textarea id="extra" name="Extra" rows="6" cols="30" placeholder="Write any additional skills you have..." required></textarea>
-        <br>
-      </fieldset>
+          <br />
 
-      <input type="submit" value="Submit">
-      &nbsp;
-      <input type="reset" value="Reset">
-    </form>
-  </main>
-  <footer>      <a
-    href="https://team-web-dev.atlassian.net/jira/software/projects/TWD/boards/2?atlOrigin=eyJpIjoiYmU1MWY3MDQ3MGNlNDljZTlkZTlkYzkzYTRhNjA2MzQiLCJwIjoiaiJ9"
-  >
-    To find out more about our project management, please click here to
-    visit our Jira workspace.
-  </a></footer>
-</body>
+          <label for="extra">Other Skills:</label><br />
+          <textarea
+            id="extra"
+            name="Extra"
+            rows="6"
+            cols="30"
+            placeholder="Write any additional skills you have..."
+            required
+          ></textarea>
+          <br />
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+        &nbsp;
+        <input type="reset" value="Reset" />
+      </form>
+    </main>
+    <footer>
+      <a
+        href="https://team-web-dev.atlassian.net/jira/software/projects/TWD/boards/2?atlOrigin=eyJpIjoiYmU1MWY3MDQ3MGNlNDljZTlkZTlkYzkzYTRhNjA2MzQiLCJwIjoiaiJ9"
+      >
+        To find out more about our project management, please click here to
+        visit our Jira workspace.
+      </a>
+    </footer>
+  </body>
 </html>
