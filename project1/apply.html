@@ -1,3 +1,4 @@
+<!--This is the apply page, -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +12,7 @@
     <title>Swinburne Data Solutions</title>
   </head>
   <body>
+    <!--This is the teams image and links to the other pages-->
     <header>
       <img id="logo" src="/images/logo.png" alt="The Team Web Dev Logo">
       <h1>Swinova Tech</h1>
@@ -22,13 +24,13 @@
         <a href="mailto:info@swinovatech.com.au">Email Us</a>
       </nav>
     </header>
-
+    <!--This is the form thats filled and displayed in another page -->
     <main id="apply-page-main">
       <h2>Application Form</h2>
       <form
         action="https://mercury.swin.edu.au/it000000/formtest.php"
         method="post"
-      >
+      ><!--Dropdown box-->
         <fieldset>
           <label for="refnum">Job Reference Number:</label>
           <select id="refnum" name="RefNum" required>
@@ -37,7 +39,7 @@
             <option value="2">JVC27-4755</option>
           </select>
         </fieldset>
-
+        <!--Textbox for first, last name and date of birth -->
         <fieldset>
           <legend>Personal Information</legend>
           <label for="name">First Name:</label>
@@ -60,11 +62,11 @@
             required
           >
           <br>
-
+          
           <label for="dob">Date of Birth:</label>
-          <input type="date" id="dob" name="DOB" required />
+          <input type="date" id="dob" name="DOB" required>
         </fieldset>
-
+        <!--Radio buttons for gender -->
         <fieldset>
           <legend>Gender</legend>
           <input type="radio" id="male" name="Gender" value="Male" checked>
@@ -76,7 +78,7 @@
           <input type="radio" id="other" name="Gender" value="Other">
           <label for="other">Other</label>
         </fieldset>
-
+        <!--Drop down box for state -->
         <fieldset>
           <legend>Address</legend>
           <label for="state">State:</label>
@@ -91,7 +93,7 @@
             <option value="tas">Tasmania</option>
             <option value="act">Australia Capital Territory</option>
           </select>
-
+          <!--Textbox for postcode, address and town-->
           <label for="pc">Postcode:</label>
           <input
             type="text"
@@ -108,7 +110,7 @@
           <label for="town">Town or Suburb:</label>
           <input type="text" id="town" name="Town" required maxlength="40">
         </fieldset>
-
+        <!--Textbox for email address and phone number-->
         <fieldset>
           <legend>Details</legend>
           <label for="email">Email:</label>
@@ -131,7 +133,7 @@
             pattern="[0-9\s]{8,12}"
           >
         </fieldset>
-
+        <!--Checkbox for qualifications-->
         <fieldset>
           <legend>Qualifications</legend>
           <label
@@ -140,9 +142,9 @@
               name="qualifications[]"
               id="qual2"
               value="1"
-            >
               checked
-            />
+            >
+              
             A Bachelor's degree in a relevant field</label
           ><br>
           <label
@@ -205,7 +207,7 @@
           ><br>
 
           <br>
-
+          <!--Textbox for other skills -->
           <label for="extra">Other Skills:</label><br>
           <textarea
             id="extra"
@@ -216,7 +218,7 @@
           ></textarea>
           <br>
         </fieldset>
-
+        <!--Submit and reset buttons-->
         <input id="submit-button" type="submit" value="Submit">
         &nbsp;
         <input id="reset-button" type="reset" value="Reset">
