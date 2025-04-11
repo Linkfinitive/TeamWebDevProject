@@ -134,3 +134,22 @@ aside {
   padding: 10px 20px;
   margin: 5px;
 }
+
+#submit-button,
+#reset-button {
+  font-size: large;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  background-color: lightgray;
+}
+
+#submit-button:hover,
+#reset-button:hover {
+  background-color: gray;
+  color: white;
+}
+
+#reset-button, #reset-button:hover {
+  color: red
+}
