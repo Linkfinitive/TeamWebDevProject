@@ -31,8 +31,8 @@
       >
         <fieldset>
           <label for="refnum">Job Reference Number:</label>
-          <select id="refnum" name="RefNum">
-            <option value="blank">Please Select</option>
+          <select id="refnum" name="RefNum" required>
+            <option value="">Please Select</option>
             <option value="1">JVC27-6498</option>
             <option value="2">JVC27-4755</option>
           </select>
@@ -62,7 +62,7 @@
           <br>
 
           <label for="dob">Date of Birth:</label>
-          <input type="date" id="dob" name="dob" required>
+          <input type="date" id="dob" name="DOB" required />
         </fieldset>
 
         <fieldset>
@@ -79,9 +79,9 @@
 
         <fieldset>
           <legend>Address</legend>
-          <label for="State">State:</label>
-          <select id="State" name="state">
-            <option value="blank">Please Select</option>
+          <label for="state">State:</label>
+          <select id="state" name="State">
+            <option value="">Please Select</option>
             <option value="vic">Victoria</option>
             <option value="nsw">New South Wales</option>
             <option value="qld">Queensland</option>
@@ -92,7 +92,7 @@
             <option value="act">Australia Capital Territory</option>
           </select>
 
-          <label for="pc">Post Code:</label>
+          <label for="pc">Postcode:</label>
           <input
             type="text"
             id="pc"
@@ -126,7 +126,7 @@
             type="text"
             id="pnum"
             name="PNum"
-            placeholder="00000000"
+            placeholder="0000000000"
             required
             pattern="[0-9\s]{8,12}"
           >
@@ -141,6 +141,8 @@
               id="qual2"
               value="1"
             >
+              checked
+            />
             A Bachelor's degree in a relevant field</label
           ><br>
           <label
@@ -211,7 +213,6 @@
             rows="6"
             cols="30"
             placeholder="Write any additional skills you have..."
-            required
           ></textarea>
           <br>
         </fieldset>
