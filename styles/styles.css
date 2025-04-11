@@ -153,3 +153,7 @@ aside {
 #reset-button, #reset-button:hover {
   color: red
 }
+
+#apply-page-main input::placeholder {
+  color: skyblue;
+}
