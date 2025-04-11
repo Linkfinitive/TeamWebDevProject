@@ -50,6 +50,10 @@ aside {
   max-width: 25%;
 }
 
+#title-and-sections {
+  max-width: 70%;
+}
+
 #jobs-page-footer {
   text-align: center;
 }
