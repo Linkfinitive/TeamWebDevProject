@@ -9,7 +9,8 @@
 
 .homepage-sections,
 #title-and-sections,
-#about-page-main, #apply-page-main {
+#about-page-main,
+#apply-page-main {
   padding: 5px 20px;
   margin: 5px;
   border-radius: 8px;
@@ -130,4 +131,6 @@ aside {
 /* Styles for Apply */
 #apply-page-main fieldset {
   border-radius: 8px;
+  padding: 10px 20px;
+  margin: 5px;
 }
