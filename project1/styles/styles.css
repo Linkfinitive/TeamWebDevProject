@@ -141,17 +141,16 @@ aside {
   padding: 10px 20px;
   margin: 5px;
   border-radius: 8px;
+  background-color: white;
+}
+
+#submit-button:hover {
   background-color: lightgray;
 }
 
-#submit-button:hover,
+#reset-button,
 #reset-button:hover {
-  background-color: gray;
-  color: white;
-}
-
-#reset-button, #reset-button:hover {
-  color: red
+  color: red;
 }
 
 /* This is here due to the requirement to use a CSS pseudo element */
