@@ -154,6 +154,7 @@ aside {
   color: red
 }
 
+/* This is here due to the requirement to use a CSS pseudo element */
 #apply-page-main input::placeholder {
   color: skyblue;
 }
