@@ -144,7 +144,7 @@ aside {
   background-color: white;
 }
 
-#submit-button:hover {
+#submit-button:hover, #reset-button:hover {
   background-color: lightgray;
 }
 
