@@ -150,7 +150,7 @@ aside {
 
 #reset-button,
 #reset-button:hover {
-  color: red;
+  color: #990000
 }
 
 /* This is here due to the requirement to use a CSS pseudo element */
