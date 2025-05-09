@@ -44,7 +44,10 @@ header {
 }
 
 header h1 {
-  font: bold 2.5em "Courier New", Courier, monospace;
+  font:
+    bold 2.5em "Courier New",
+    Courier,
+    monospace;
 }
 
 #logo {
@@ -144,13 +147,14 @@ aside {
   background-color: white;
 }
 
-#submit-button:hover, #reset-button:hover {
+#submit-button:hover,
+#reset-button:hover {
   background-color: lightgray;
 }
 
 #reset-button,
 #reset-button:hover {
-  color: #990000
+  color: #990000;
 }
 
 /* This is here due to the requirement to use a CSS pseudo element */
