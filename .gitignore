@@ -1,0 +1,11 @@
+#for security reasons
+settings.php
+
+#because macs create this temporary file
+.DS_Store
+
+#because cliff uses an extension which creates these annoying files
+node_modules
+package-lock.json
+package.json
+.prettierrc
