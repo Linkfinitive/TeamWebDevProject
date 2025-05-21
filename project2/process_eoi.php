@@ -30,6 +30,9 @@ if (!form_data_is_valid()) {
 
 //Inserting into the db
 require_once "../settings.php";
+
+//NEEDS TO CHECK IF THE EOI TABLE EXISTS OR NOT, AND CREATE IT IF NOT.
+
 $stmt = $conn->prepare(
     "INSERT INTO eoi (reference, first_name, surname, street_address, suburb, state, postcode, email, phone, skills, extended_skills)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
