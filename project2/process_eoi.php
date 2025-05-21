@@ -1,23 +1,25 @@
 <?php
-require_once "settings.php";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $reference = $_POST["RefNum"];
-    $first_name = $_POST["Name"];
-    $surname = $_POST["Lname"];
-    $street_address = $_POST["Address"];
-    $suburb = $_POST["Town"];
-    $state = $_POST["State"];
-    $postcode = $_POST["PCode"];
-    $email = $_POST["Email"];
-    $phone = $_POST["PNum"];
-    $skills = $_POST["qualifications"];
-    $extended_skills = $_POST["Extra"];
+    $reference = sanitise_input($_POST["RefNum"]);
+    $first_name = sanitise_input($_POST["Name"]);
+    $surname = sanitise_input($_POST["Lname"]);
+    $street_address = sanitise_input($_POST["Address"]);
+    $suburb = sanitise_input($_POST["Town"]);
+    $state = sanitise_input($_POST["State"]);
+    $postcode = sanitise_input($_POST["PCode"]);
+    $email = sanitise_input($_POST["Email"]);
+    $phone = sanitise_input($_POST["PNum"]);
+    $skills = sanitise_input($_POST["qualifications"]);
+    $extended_skills = sanitise_input($_POST["Extra"]);
 
     //Validation
-    //(Coming soon!)
+    if (!vaildate_form_data()) {
+        header("Location: error.php");
+        exit();
+    }
 
     //Inserting into the db
+    require_once "settings.php";
     $stmt = $conn->prepare(
         "INSERT INTO eoi (reference, first_name, surname, street_address, suburb, state, postcode, email, phone, skills, extended_skills) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
@@ -41,7 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
 
     //Processing
-    if ($result) {
+    if (!$result) {
+        header("Location: error.php");
+        exit();
     }
+}
+
+function sanitise_input($data)
+{
+    //Function created by Atie Kia.
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 ?>
