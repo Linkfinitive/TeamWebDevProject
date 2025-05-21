@@ -28,7 +28,7 @@
     <main id="apply-page-main">
       <h2>Application Form</h2>
       <form
-        action="https://mercury.swin.edu.au/it000000/formtest.php"
+        action="process_eoi.php"
         method="post"
       >
         <!--Dropdown box-->
