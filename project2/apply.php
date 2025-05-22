@@ -1,5 +1,8 @@
 <!--This is the apply page, -->
 <!doctype html>
+<?php
+  include 'header.inc';
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,18 +15,6 @@
     <title>Swinburne Data Solutions</title>
   </head>
   <body>
-    <!--This is the teams image and links to the other pages-->
-    <header>
-      <img id="logo" src="./images/logo.png" alt="The Team Web Dev Logo" />
-      <h1>Swinova Tech</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Careers</a>
-        <a href="apply.html">Apply</a>
-        <a href="about.html">About</a>
-        <a href="mailto:info@swinovatech.com.au">Email Us</a>
-      </nav>
-    </header>
     <!--This is the form thats filled and displayed in another page -->
     <main id="apply-page-main">
       <h2>Application Form</h2>
@@ -231,12 +222,9 @@
         <input id="reset-button" type="reset" value="Reset" />
       </form>
     </main>
-    <footer>
-      <a
-        href="https://team-web-dev.atlassian.net/jira/software/projects/TWD/boards/2?atlOrigin=eyJpIjoiYmU1MWY3MDQ3MGNlNDljZTlkZTlkYzkzYTRhNjA2MzQiLCJwIjoiaiJ9"
-      >
-        Visit our Jira workspace to find out more about our project management.
-      </a>
-    </footer>
   </body>
 </html>
+
+<?php
+include 'footer.inc';
+?>

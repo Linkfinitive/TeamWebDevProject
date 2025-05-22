@@ -6,5 +6,12 @@
     >
         Visit our Jira workspace to find out more about our project management.
     </a>
+    <br />
+    <a
+        href="https://github.com/Linkfinitive/TeamWebDevProject"
+        target="_blank"
+    >
+        Visit our GitHub Repository.
+    </a>
 </footer>
 </html>

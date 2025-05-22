@@ -1,7 +1,9 @@
 <!doctype html>
 
 <!-- HOMEPAGE FOR THE WEBSITE-->
-
+<?php
+  include 'header.inc';
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,17 +17,6 @@
     <title>Home Page</title>
   </head>
   <body>
-    <header>
-      <img id="logo" src="./images/logo.png" alt="The Team Web Dev Logo" />
-      <h1>Swinova Tech</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Careers</a>
-        <a href="apply.html">Apply</a>
-        <a href="about.html">About</a>
-        <a href="mailto:info@swinovatech.com.au">Email Us</a>
-      </nav>
-    </header>
     <main>
       <section id="swinova-introduction" class="homepage-sections">
         <h2>Welcome to Swinova Tech – Where Innovation Meets Talent</h2>
@@ -54,19 +45,9 @@
         </p>
       </section>
     </main>
-    <footer>
-      <a
-        href="https://team-web-dev.atlassian.net/jira/software/projects/TWD/boards/2?atlOrigin=eyJpIjoiYmU1MWY3MDQ3MGNlNDljZTlkZTlkYzkzYTRhNjA2MzQiLCJwIjoiaiJ9"
-      >
-        Visit our Jira workspace to find out more about our project management.
-      </a>
-      <br />
-      <a
-        href="https://github.com/Linkfinitive/TeamWebDevProject"
-        target="_blank"
-      >
-        Visit our GitHub Repository.
-      </a>
-    </footer>
   </body>
 </html>
+
+<?php
+include 'footer.inc';
+?>

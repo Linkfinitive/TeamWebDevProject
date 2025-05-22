@@ -1,5 +1,8 @@
 <!--This is the about page, -->
 <!doctype html>
+<?php
+  include 'header.inc';
+?>
 
 <html lang="en">
   <head>
@@ -14,18 +17,6 @@
     <title>About Us</title>
   </head>
   <body>
-    <header>
-      <!--This is the teams image and links to the other pages-->
-      <img id="logo" src="./images/logo.png" alt="The Team Web Dev Logo" />
-      <h1>Swinova Tech</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Careers</a>
-        <a href="apply.html">Apply</a>
-        <a href="about.html">About</a>
-        <a href="mailto:info@swinovatech.com.au">Email Us</a>
-      </nav>
-    </header>
     <main id="about-page-main">
       <h2>About Us</h2>
       <!-- Photo of the team -->
@@ -128,12 +119,9 @@
         </table>
       </section>
     </main>
-    <footer>
-      <a
-        href="https://team-web-dev.atlassian.net/jira/software/projects/TWD/boards/2?atlOrigin=eyJpIjoiYmU1MWY3MDQ3MGNlNDljZTlkZTlkYzkzYTRhNjA2MzQiLCJwIjoiaiJ9"
-      >
-        Visit our Jira workspace to find out more about our project management.
-      </a>
-    </footer>
   </body>
 </html>
+
+<?php
+include 'footer.inc';
+?>

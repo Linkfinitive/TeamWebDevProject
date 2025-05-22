@@ -1,7 +1,9 @@
 <!doctype html>
 
 <!-- THIS PAGE CONTAINS THE DETAILS FOR OUR OPEN JOB POSITIONS AND LINKS TO APPLY (CG) -->
-
+<?php
+  include 'header.inc';
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,17 +17,6 @@
     <title>Jobs</title>
   </head>
   <body>
-    <header>
-      <img id="logo" src="./images/logo.png" alt="The Team Web Dev Logo" />
-      <h1>Swinova Tech</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Careers</a>
-        <a href="apply.html">Apply</a>
-        <a href="about.html">About</a>
-        <a href="mailto:info@swinovatech.com.au">Email Us</a>
-      </nav>
-    </header>
     <main id="jobs-page-main">
       <aside>
         <p>
@@ -197,3 +188,7 @@
     </footer>
   </body>
 </html>
+
+<?php
+include 'footer.inc';
+?>
