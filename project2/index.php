@@ -37,10 +37,10 @@
           contribute to exciting projects.
         </p>
         <p>
-          Explore the <a class="homepage-link" href="jobs.html">Careers</a> page
+          Explore the <a class="homepage-link" href="jobs.php">Careers</a> page
           to view our current job openings and find a role that suits your
           skills and passion. If you're ready to take the next step, visit the
-          <a class="homepage-link" href="apply.html">Apply</a> page to submit
+          <a class="homepage-link" href="apply.php">Apply</a> page to submit
           your application.
         </p>
       </section>
