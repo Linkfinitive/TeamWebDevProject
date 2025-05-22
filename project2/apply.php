@@ -19,7 +19,7 @@
     <main id="apply-page-main">
       <h2>Application Form</h2>
       <form
-        action="https://mercury.swin.edu.au/it000000/formtest.php"
+        action="process_eoi.php"
         method="post"
       >
         <!--Dropdown box-->
@@ -28,8 +28,8 @@
           <label for="refnum">Job Reference Number:</label>
           <select id="refnum" name="RefNum" required>
             <option value="">Please Select</option>
-            <option value="1">JVC27-6498</option>
-            <option value="2">JVC27-4755</option>
+            <option value="6498">JVC27-6498</option>
+            <option value="4755">JVC27-4755</option>
           </select>
         </fieldset>
         <!--Textbox for first, last name and date of birth -->
