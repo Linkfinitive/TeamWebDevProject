@@ -3,14 +3,15 @@
 <!-- THIS PAGE CONTAINS THE DETAILS FOR OUR OPEN JOB POSITIONS AND LINKS TO APPLY (CG) -->
 <?php
   include 'header.inc';
+  include 'settings.php';
 ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TeamWebDev" />
-    <meta name="description" content="WRITE DESCRIPTION HERE" />
-    <meta name="keywords" content="WRITE KEYWORDS HERE" />
+    <meta name="description" content="Explore current job openings at Swinova Tech" />
+    <meta name="keywords" content="Jobs, Careers" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
 
@@ -20,171 +21,113 @@
     <main id="jobs-page-main">
       <aside>
         <p>
-          Fun Fact: The term "Data Scientist" was coined in 2008 and has since
-          become one of the most in-demand roles in tech!
-          <br /><br />
-          Fun Fact: Data analytics is helping conservationists track koala
-          populations through satellite imaging and machine learning models.
-          Tech isn't just for business — it's saving lives!
-          <br /><br />
-          Fun Fact: Excel is still used in over 80% of businesses for data
-          handling, even in high-tech industries. It's not old-school — it's
-          essential.
-          <br /><br />
-          Fun Fact: In Australia, demand for data-related roles has outpaced
-          supply by over 3:1. If you’ve got the skills, you’ve already got a
-          head start.
-          <br /><br />
-          Fun Fact: A hacker attack happens every 39 seconds on average. That’s
-          over 2,200 attacks per day — and why cybersecurity specialists are
-          more crucial than ever.
-          <br /><br />
-          Fun Fact: The term "hacker" originally referred to someone who enjoyed
-          understanding and tinkering with systems, not breaking them. Now,
-          ethical hackers use those same skills to protect companies.
-          <br /><br />
-          Fun Fact: Over 95% of cybersecurity breaches are caused by human error
-          — that’s why cybersecurity isn’t just about tech, but also about
-          training and awareness.
-          <br /><br />
-          Fun Fact: The Australian Cyber Security Centre receives one cybercrime
-          report every 6 minutes. That’s 240 per day. And growing.
-          <br /><br />
+        <strong>Fun Facts:</strong><br /><br />
+        • The term "Data Scientist" was coined in 2008 and has become one of the most in-demand roles in tech.<br /><br />
+        • Data analytics is used in conservation to track koala populations through satellite imaging and machine learning models.<br /><br />
+        • Excel is still used in over 80% of businesses for data handling—even in high-tech industries.<br /><br />
+        • In Australia, demand for data-related roles has outpaced supply by over 3:1.<br /><br />
+        • A hacker attack happens every 39 seconds—over 2,200 attacks per day globally.<br /><br />
+        • The term "hacker" originally referred to people who loved exploring and improving systems—not breaking them.<br /><br />
+        • Over 95% of cybersecurity breaches are caused by human error.<br /><br />
+        • The Australian Cyber Security Centre receives one cybercrime report every 6 minutes.
         </p>
-        <!-- Prompt message: CAn you give me some fun facts realted to data analyst and cybersecurity specialist in Australia-->
+        <!-- Prompt message: Can you give me some fun facts realted to data analyst and cybersecurity specialist in Australia-->
       </aside>
       <div id="title-and-sections">
         <h2>Open Positions</h2>
         <hr />
-        <section>
-          <h3>Data Analyst</h3>
-          <h4>Position Reference Number: JVC27-6498</h4>
-          <p>Salary: <strong>$80,000 - $100,000 per year</strong></p>
-          <p>
-            As a Data Analyst at Swinova Tech, you will analyse complex datasets
-            to generate insights that drive business decisions. You will
-            collaborate with cross-functional teams to develop data models,
-            reports, and predictive analytics.
-          </p>
-          <p>Key responsibilities for the position include:</p>
-          <ol>
-            <li>
-              Collect, clean, and analyse large datasets to identify trends and
-              patterns.
-            </li>
-            <li>
-              Develop interactive dashboards and reports to support business
-              intelligence.
-            </li>
-            <li>
-              Use statistical techniques and machine learning models for
-              predictive analysis.
-            </li>
-            <li>
-              Work with different teams to provide actionable insights based on
-              data findings.
-            </li>
-            <li>
-              Ensure data integrity and accuracy across all business reporting
-              processes.
-            </li>
-          </ol>
-          <p>Essential qualifications for this position include:</p>
-          <ul>
-            <li>
-              Bachelor’s degree in Data Science, Statistics, Computer Science,
-              or related field.
-            </li>
-            <li>
-              Proficiency in SQL or Python for data manipulation and analysis.
-            </li>
-            <li>
-              Experience with data visualisation tools like Tableau, Power BI,
-              or Google Data Studio.
-            </li>
-            <li>Strong analytical skills with a keen attention to detail.</li>
-          </ul>
-          <p>
-            Our ideal candidate would also possess the following qualifications:
-          </p>
-          <ul>
-            <li>2+ years of experience as a Data analyst</li>
-            <li>A recommendation from industry supervisor</li>
-            <li>
-              Strong understanding of cloud data solutions (AWS, Azure, or
-              Google Cloud)
-            </li>
-          </ul>
-          <!-- Prompt message: Can you give me some qualifications required for a job of Data analyst -->
-          <p>
-            This position reports directly to Swinova Tech's Lead Data Analytics
-          </p>
-        </section>
-        <hr />
-        <section>
-          <h3>Cybersecurity Specialist</h3>
-          <h4>Position Reference Number : JVC27-4755</h4>
-          <p>Salary: <strong>$85,000 - $110,000 per year</strong></p>
-          <p>
-            As a Cybersecurity Specialist at Swinova Tech, you will be
-            responsible for protecting our systems and data from cyber threats.
-            You will develop security policies, conduct risk assessments, and
-            implement defense strategies to ensure a secure digital environment.
-          </p>
-          <p>Key responsibilities for the position include:</p>
-          <ol>
-            <li>
-              Monitor and assess security threats, vulnerabilities, and risks.
-            </li>
-            <li>Keep the security system upto-date</li>
-            <li>Develop and enforce security policies and best practices.</li>
-            <li>Perform penetration testing and security audits.</li>
-            <li>
-              Respond to security incidents and conduct forensic investigations.
-            </li>
-            <li>Ensure compliance with industry regulations and standards.</li>
-          </ol>
-          <p>Essential qualifications for this position include:</p>
-          <ul>
-            <li>
-              Bachelor’s degree in Cybersecurity, Information Technology, or a
-              related field.
-            </li>
-            <li>
-              Experience with network security, firewalls, and intrusion
-              detection systems.
-            </li>
-            <li>
-              Proficiency in security tools such as SIEM, IDS/IPS, and endpoint
-              protection.
-            </li>
-            <li>
-              Knowledge of cybersecurity frameworks (NIST, ISO 27001, CIS
-              Controls).
-            </li>
-          </ul>
-          <p>
-            Our ideal candidate would also possess the following qualifications:
-          </p>
-          <ul>
-            <li>
-              Valid Professional certification (CISSP, CEH, CISM, or
-              equivalent).
-            </li>
-            <li>2+ years work experience in the industry.</li>
-            <li>Recommendation from industry supervisor</li>
-            <li>Strong analytical and problem-solving skills.</li>
-          </ul>
-          <p>
-            This position reports directly to Chief Information Security Officer
-          </p>
-        </section>
-        <!-- Prompt message: Can you give me some qualifications required for the job of Cyber security specialist and who do they report to generally-->
+        <?php
+          // Check if database connection exists
+          if (!isset($conn) || !$conn) {
+            echo "<p>Error: Database connection not established. Please check your settings.php file.</p>";
+            echo "<p>Make sure your MySQL/Apache server is running.</p>";
+          } else {
+            echo "<p>Database connected successfully!</p>"; // Debug line - remove this later
+            
+            $query = "SELECT * FROM jobs ORDER BY job_id";
+            $result = mysqli_query($conn, $query);
+            
+            if (!$result) {
+              echo "<p>Error executing query: " . mysqli_error($conn) . "</p>";
+              echo "<p>Make sure the 'jobs' table exists in your database.</p>";
+            } else if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo "<section>";
+                echo "<h3>" . htmlspecialchars($row['job_title']) . "</h3>";
+                echo "<h4>Position Reference Number: " . htmlspecialchars($row['job_ref']) . "</h4>";
+                echo "<p>Salary: <strong>" . htmlspecialchars($row['salary']) . "</strong></p>";
+                echo "<p>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
+                
+                // Since your current table only has basic info, we'll add static content for now
+                echo "<p><strong>Key responsibilities for the position include:</strong></p>";
+                echo "<ol>";
+                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
+                    echo "<li>Collect, clean, and analyse large datasets from various sources</li>";
+                    echo "<li>Create comprehensive reports and visualizations for stakeholders</li>";
+                    echo "<li>Develop and maintain automated reporting systems</li>";
+                    echo "<li>Collaborate with teams to identify key performance indicators</li>";
+                    echo "<li>Present findings and recommendations to management</li>";
+                } else { // Cybersecurity Specialist  
+                    echo "<li>Monitor network traffic and security logs for suspicious activity</li>";
+                    echo "<li>Conduct vulnerability assessments and penetration testing</li>";
+                    echo "<li>Implement and maintain security tools and technologies</li>";
+                    echo "<li>Develop and update security policies and procedures</li>";
+                    echo "<li>Respond to and investigate security incidents</li>";
+                }
+                echo "</ol>";
+                
+                // Display essential qualifications
+                echo "<p><strong>Essential qualifications for this position include:</strong></p>";
+                echo "<ul>";
+                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
+                    echo "<li>Bachelor's degree in Statistics, Mathematics, Computer Science, or related field</li>";
+                    echo "<li>Proficiency in SQL and database management</li>";
+                    echo "<li>Experience with data visualization tools (Tableau, Power BI, or similar)</li>";
+                    echo "<li>Strong analytical and problem-solving skills</li>";
+                    echo "<li>Knowledge of statistical analysis and modeling techniques</li>";
+                } else { // Cybersecurity Specialist
+                    echo "<li>Bachelor's degree in Cybersecurity, Information Technology, or related field</li>";
+                    echo "<li>Knowledge of network security protocols and technologies</li>";
+                    echo "<li>Experience with security tools (firewalls, SIEM, antivirus, etc.)</li>";
+                    echo "<li>Understanding of risk assessment and management</li>";
+                    echo "<li>Strong analytical and problem-solving abilities</li>";
+                }
+                echo "</ul>";
+                
+                // Display preferred qualifications
+                echo "<p><strong>Our ideal candidate would also possess the following qualifications:</strong></p>";
+                echo "<ul>";
+                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
+                    echo "<li>Master's degree in a quantitative field</li>";
+                    echo "<li>Experience with Python or R for data analysis</li>";
+                    echo "<li>Knowledge of machine learning algorithms</li>";
+                    echo "<li>Experience with cloud platforms (AWS, Azure, Google Cloud)</li>";
+                } else { // Cybersecurity Specialist
+                    echo "<li>Professional security certifications (CISSP, CEH, CISM, etc.)</li>";
+                    echo "<li>Experience with penetration testing tools and techniques</li>";
+                    echo "<li>Knowledge of compliance frameworks (ISO 27001, NIST, etc.)</li>";
+                    echo "<li>Experience with cloud security (AWS, Azure security services)</li>";
+                }
+                echo "</ul>";
+                
+                $reports_to = ($row['job_ref'] == 'JVC27-6498') ? 'Head of Data and Analytics' : 'Chief Information Security Officer';
+                echo "<p><strong>This position reports directly to:</strong> " . htmlspecialchars($reports_to) . "</p>";
+                echo "</section><hr />";
+              }
+            } else {
+              echo "<p>No job listings available at this time.</p>";
+              echo "<p>Make sure you have data in your 'jobs' table.</p>";
+            }
+            mysqli_close($conn);
+          }
+        ?>
       </div>
     </main>
-    <!-- Prompt message: The help provided by GenAI was they refined with the help of this website https://www.zippia.com/employer/how-to-write-a-job-description/ -->
+
+    </main>
+    <!-- Footer with apply link -->
     <footer id="jobs-page-footer">
-      <a href="apply.html"> Apply for the Jobs listed above. </a>
+      <a href="apply.php">Apply for the Jobs listed above.</a>
     </footer>
   </body>
 </html>
