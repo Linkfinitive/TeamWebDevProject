@@ -43,56 +43,75 @@
       <!-- Tutor section -->
       <h3>Tutor - Enrique Nicolás Ketterer (Nick)</h3>
       <!--List of members and their responsibilities-->
-      <h2>Group Responsibilities</h2>
-      <dl>
-        <dt>Vidhi</dt>
-        <dd>
-          Tasks
+      <h2>Project Contributions</h2>
+      <ol>
+        <li>
+          Vidhi
           <ul>
             <li>
-              Sprint 0: Set up communication channel, Jira project and Sprint
-              planning
+              Part 1
+              <ul>
+                <li>Sprint 0: Set up communication channel, Jira project and Sprint planning </li>
+                <li>Sprint 1: The base of Home page</li>
+                <li>Sprint 2: Code validation and Contact for the website</li>
+                <li>Throughout the project: Manages the Jira Project, asks questions on Canvas, reviews code and Merge Pull Requests </li>
+              </ul>
             </li>
-            <li>Sprint 1: The base of Home page</li>
-            <li>Sprint 2: Code validation and Contact for the website</li>
             <li>
-              Throughout the project: Manages the Jira Project, asks questions
-              on Canvas, reviews code and Merge Pull Requests
+              Part 2
+              <ul>
+                <li>Task 6 – Added search job form enhancements such as dropdowns and field validation.</li>
+                <li>Task 7 – Modified the search process script to filter and display results based on new criteria.</li>
+                <li>Task 8 – Sorted job listings by closing date, displaying future jobs first.</li>              </ul>
             </li>
           </ul>
-        </dd>
-
-        <dt>Cliff</dt>
-        <dd>
-          Tasks
-          <ul>
-            <li>Sprint 0: Set up GitHub for the group and team agreement</li>
-            <li>Sprint 1: The base of Jobs page</li>
-            <li>Sprint 2: CSS code and Work on accessibility principles</li>
-            <li>
-              Throughout the project: Makes sure all project requirements are
-              fulfilled and GitHub is managed properly
-            </li>
-          </ul>
-        </dd>
-
-        <dt>Jacob</dt>
-        <dd>
-          Tasks
+        </li>
+        <li>
+          Cliff
           <ul>
             <li>
-              Sprint 0: Set up communication channel, Jira project and Sprint
-              planning
+              Part 1
+              <ul>
+                <li>Sprint 0: Set up GitHub for the group and team agreement</li>
+                <li>Sprint 1: The base of Jobs page</li>
+                <li>Sprint 2: CSS code and Work on accessibility principles</li>
+                <li>Throughout the project: Makes sure all project requirements are fulfilled and GitHub is managed properly </li>
+              </ul>
             </li>
-            <li>Sprint 1: The base of Home page</li>
-            <li>Sprint 2: Code validation and Contat for the website</li>
             <li>
-              Throughout the project: Manages the Jira Project, asks questions
-              on Canvas, reviews code and Merge Pull Requests
+              Part 2
+              <ul>
+                <li>Task 3 – Created the job application form with HTML5 validation and a POST method to EOI submission.</li>
+                <li>Task 4 – Wrote PHP code to process submitted EOIs and insert them into the database securely.</li>
+                <li>Task 5 – Validated server-side logic for field inputs, ensured required values were captured, and implemented error handling.</li>
+              </ul>
             </li>
           </ul>
-        </dd>
-      </dl>
+        </li>
+        <li>
+          Jacob 
+          <ul>
+            <li>
+              Part 1
+              <ul>
+                <li>Sprint 0: Created the roles and responsibilties document. </li>
+                <li>Sprint 1: The base of Application form</li>
+                <li>Sprint 2: Working on accessibility of the website</li>
+                <li> Throughout the project: Manages the Jira Project, asks questions on Canvas, reviews code and Merge Pull Requests </li>
+              </ul>
+            </li>
+            <li>
+              Part 2
+              <ul>
+                <li>Task 1 – Modularised the website using PHP by extracting common elements (header, footer, and navigation) into separate .inc files and including them using PHP include statements. </li>
+                <li>Task 2 – Created a settings.php file to store database connection credentials and included it in all PHP scripts that connect to the MySQL database.</li>
+                <li>Presentation – Assisted in designing and delivering the final group presentation, outlining the team’s contributions and project outcomes.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      
 
       <!--Members and their interests-->
       <section id="interests-table">
