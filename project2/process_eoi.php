@@ -28,11 +28,32 @@ if (!form_data_is_valid()) {
     exit();
 }
 
-//Inserting into the db
+//Opening the connection
 require_once "../settings.php";
 
-//NEEDS TO CHECK IF THE EOI TABLE EXISTS OR NOT, AND CREATE IT IF NOT.
+//Creating the table if it doesn't already exist
+$query = "CREATE TABLE IF NOT EXISTS `eoi` (
+    `id` int(11) NOT NULL,
+    `reference` int(11) NOT NULL,
+    `first_name` varchar(50) NOT NULL,
+    `surname` varchar(50) NOT NULL,
+    `street_address` varchar(50) NOT NULL,
+    `suburb` varchar(50) NOT NULL,
+    `state` varchar(50) NOT NULL,
+    `postcode` int(11) NOT NULL,
+    `email` varchar(50) NOT NULL,
+    `phone` int(11) NOT NULL,
+    `skills` varchar(50) NOT NULL,
+    `extended_skills` text DEFAULT NULL,
+    `status` varchar(50) NOT NULL DEFAULT 'New'
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
 
+if (!($result = mysqli_query($conn, $query))) {
+    header("Location: error.php");
+    exit();
+}
+
+//Inserting the new value into the DB
 $stmt = $conn->prepare(
     "INSERT INTO eoi (reference, first_name, surname, street_address, suburb, state, postcode, email, phone, skills, extended_skills)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
