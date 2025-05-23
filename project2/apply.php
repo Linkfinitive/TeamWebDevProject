@@ -1,8 +1,6 @@
 <!--This is the apply page, -->
 <!doctype html>
-<?php
-  include 'header.inc';
-?>
+<?php include "header.inc"; ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -203,6 +201,15 @@
             Experience with penetration testing (only for Cybersecurity
             Specialist)</label
           ><br />
+          <label
+            ><input
+              type="checkbox"
+              name="qualifications[]"
+              id="qual10"
+              value="8"
+            />
+            Other skills &lpar;please specify below&rpar;</label
+          ><br />
 
           <br />
           <!--Textbox for other skills -->
@@ -225,6 +232,5 @@
   </body>
 </html>
 
-<?php
-include 'footer.inc';
+<?php include "footer.inc";
 ?>
