@@ -23,7 +23,21 @@ $skills = isset($_POST["qualifications"])
     : "";
 
 //Validation
-if (!form_data_is_valid()) {
+if (
+    !form_data_is_valid(
+        $reference,
+        $first_name,
+        $surname,
+        $street_address,
+        $suburb,
+        $state,
+        $postcode,
+        $email,
+        $phone,
+        $skills,
+        $extended_skills
+    )
+) {
     header("Location: error.php");
     exit();
 }
@@ -33,7 +47,7 @@ require_once "../settings.php";
 
 //Creating the table if it doesn't already exist
 $query = "CREATE TABLE IF NOT EXISTS `eoi` (
-    `id` int(11) NOT NULL,
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `reference` int(11) NOT NULL,
     `first_name` varchar(50) NOT NULL,
     `surname` varchar(50) NOT NULL,
@@ -106,15 +120,34 @@ function sanitise_input($data)
     return $data;
 }
 
-function form_data_is_valid()
-{
+function form_data_is_valid(
+    $reference,
+    $first_name,
+    $surname,
+    $street_address,
+    $suburb,
+    $state,
+    $postcode,
+    $email,
+    $phone,
+    $skills,
+    $extended_skills
+) {
     if (empty($reference)) {
         return false;
     }
-    if (empty($first_name) || strlen($first_name) > 20) {
+    if (
+        empty($first_name) ||
+        strlen($first_name) > 20 ||
+        preg_match("/^[A-Za-z\d]*$/", $first_name) == 0
+    ) {
         return false;
     }
-    if (empty($surname) || strlen($surname) > 20) {
+    if (
+        empty($surname) ||
+        strlen($surname) > 20 ||
+        preg_match("/^[A-Za-z\d]*$/", $surname) == 0
+    ) {
         return false;
     }
     if (empty($street_address) || strlen($street_address) > 40) {
@@ -136,13 +169,18 @@ function form_data_is_valid()
     ) {
         return false;
     }
-    if (empty($postcode) || !postcode_matches_state()) {
+    if (empty($postcode) || !postcode_matches_state($state, $postcode)) {
         return false;
     }
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false;
     }
-    if (empty($phone) || strlen($phone) > 12 || strlen($phone < 8)) {
+    if (
+        empty($phone) ||
+        strlen($phone) > 12 ||
+        strlen($phone) < 8 ||
+        preg_match("/^[0-9\s]{8,12}$/", $phone) == 0
+    ) {
         return false;
     }
     if (empty($skills)) {
@@ -151,63 +189,70 @@ function form_data_is_valid()
 
     $skills_array = explode(", ", $skills);
     $count = count($skills_array);
-    if ($skills_array[$count] == "8" && empty($extended_skills)) {
+    if ($skills_array[$count - 1] == "8" && empty($extended_skills)) {
         return false;
     }
 
     return true;
 }
 
-function postcode_matches_state()
+function postcode_matches_state($state, $postcode)
 {
     // Postcode ranges come from:
     // https://en.wikipedia.org/wiki/Postcodes_in_Australia
     switch ($state) {
+        // Directly use $state as it's already lowercase
         case "vic":
-            if (3000 <= $postcode <= 3996 || 8000 <= $postcode <= 8999) {
+            if (
+                ($postcode >= 3000 && $postcode <= 3996) ||
+                ($postcode >= 8000 && $postcode <= 8999)
+            ) {
                 return true;
             }
             break;
         case "nsw":
             if (
-                1000 <= $postcode <= 2599 ||
-                2619 <= $postcode <= 2899 ||
-                2921 <= $postcode <= 2999
+                ($postcode >= 1000 && $postcode <= 2599) ||
+                ($postcode >= 2619 && $postcode <= 2899) ||
+                ($postcode >= 2921 && $postcode <= 2999)
             ) {
                 return true;
             }
             break;
         case "tas":
-            if (7000 <= $postcode <= 7999) {
+            if ($postcode >= 7000 && $postcode <= 7999) {
                 return true;
             }
             break;
         case "act":
             if (
-                200 <= $postcode <= 299 ||
-                2600 <= $postcode <= 2618 ||
-                2900 <= $postcode <= 2920
+                ($postcode >= 200 && $postcode <= 299) ||
+                ($postcode >= 2600 && $postcode <= 2618) ||
+                ($postcode >= 2900 && $postcode <= 2920)
             ) {
                 return true;
             }
             break;
         case "wa":
-            if (6000 <= $postcode <= 6999) {
+            if ($postcode >= 6000 && $postcode <= 6999) {
                 return true;
             }
             break;
         case "sa":
-            if (5000 <= $postcode <= 5999) {
+            if ($postcode >= 5000 && $postcode <= 5999) {
                 return true;
             }
             break;
         case "nt":
-            if (800 <= $postcode <= 999) {
+            if ($postcode >= 800 && $postcode <= 999) {
                 return true;
             }
             break;
         case "qld":
-            if (4000 <= $postcode <= 4999 || 9000 <= $postcode <= 9999) {
+            if (
+                ($postcode >= 4000 && $postcode <= 4999) ||
+                ($postcode >= 9000 && $postcode <= 9999)
+            ) {
                 return true;
             }
             break;
