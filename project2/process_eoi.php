@@ -43,7 +43,7 @@ if (
 }
 
 //Opening the connection
-require_once "../settings.php";
+require_once "settings.php";
 
 //Creating the table if it doesn't already exist
 $query = "CREATE TABLE IF NOT EXISTS `eoi` (
