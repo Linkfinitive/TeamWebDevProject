@@ -42,8 +42,6 @@
             echo "<p>Error: Database connection not established. Please check your settings.php file.</p>";
             echo "<p>Make sure your MySQL/Apache server is running.</p>";
           } else {
-            echo "<p>Database connected successfully!</p>"; // Debug line - remove this later
-            
             $query = "SELECT * FROM jobs ORDER BY job_id";
             $result = mysqli_query($conn, $query);
             
@@ -57,62 +55,23 @@
                 echo "<h4>Position Reference Number: " . htmlspecialchars($row['job_ref']) . "</h4>";
                 echo "<p>Salary: <strong>" . htmlspecialchars($row['salary']) . "</strong></p>";
                 echo "<p>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
-                
-                // Since your current table only has basic info, we'll add static content for now
-                echo "<p><strong>Key responsibilities for the position include:</strong></p>";
-                echo "<ol>";
-                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
-                    echo "<li>Collect, clean, and analyse large datasets from various sources</li>";
-                    echo "<li>Create comprehensive reports and visualizations for stakeholders</li>";
-                    echo "<li>Develop and maintain automated reporting systems</li>";
-                    echo "<li>Collaborate with teams to identify key performance indicators</li>";
-                    echo "<li>Present findings and recommendations to management</li>";
-                } else { // Cybersecurity Specialist  
-                    echo "<li>Monitor network traffic and security logs for suspicious activity</li>";
-                    echo "<li>Conduct vulnerability assessments and penetration testing</li>";
-                    echo "<li>Implement and maintain security tools and technologies</li>";
-                    echo "<li>Develop and update security policies and procedures</li>";
-                    echo "<li>Respond to and investigate security incidents</li>";
-                }
-                echo "</ol>";
-                
-                // Display essential qualifications
-                echo "<p><strong>Essential qualifications for this position include:</strong></p>";
-                echo "<ul>";
-                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
-                    echo "<li>Bachelor's degree in Statistics, Mathematics, Computer Science, or related field</li>";
-                    echo "<li>Proficiency in SQL and database management</li>";
-                    echo "<li>Experience with data visualization tools (Tableau, Power BI, or similar)</li>";
-                    echo "<li>Strong analytical and problem-solving skills</li>";
-                    echo "<li>Knowledge of statistical analysis and modeling techniques</li>";
-                } else { // Cybersecurity Specialist
-                    echo "<li>Bachelor's degree in Cybersecurity, Information Technology, or related field</li>";
-                    echo "<li>Knowledge of network security protocols and technologies</li>";
-                    echo "<li>Experience with security tools (firewalls, SIEM, antivirus, etc.)</li>";
-                    echo "<li>Understanding of risk assessment and management</li>";
-                    echo "<li>Strong analytical and problem-solving abilities</li>";
+                echo "<h3>Key Responsibilities</h3><ul>";
+                foreach (json_decode($row['key_responsibility'], true) as $item) {
+                    echo "<li>" . htmlspecialchars($item) . "</li>";
                 }
                 echo "</ul>";
-                
-                // Display preferred qualifications
-                echo "<p><strong>Our ideal candidate would also possess the following qualifications:</strong></p>";
-                echo "<ul>";
-                if ($row['job_ref'] == 'JVC27-6498') { // Data Analyst
-                    echo "<li>Master's degree in a quantitative field</li>";
-                    echo "<li>Experience with Python or R for data analysis</li>";
-                    echo "<li>Knowledge of machine learning algorithms</li>";
-                    echo "<li>Experience with cloud platforms (AWS, Azure, Google Cloud)</li>";
-                } else { // Cybersecurity Specialist
-                    echo "<li>Professional security certifications (CISSP, CEH, CISM, etc.)</li>";
-                    echo "<li>Experience with penetration testing tools and techniques</li>";
-                    echo "<li>Knowledge of compliance frameworks (ISO 27001, NIST, etc.)</li>";
-                    echo "<li>Experience with cloud security (AWS, Azure security services)</li>";
+        
+                echo "<h3>Essential Qualifications</h3><ul>";
+                foreach (json_decode($row['essential_qualifications'], true) as $item) {
+                    echo "<li>" . htmlspecialchars($item) . "</li>";
                 }
                 echo "</ul>";
-                
-                $reports_to = ($row['job_ref'] == 'JVC27-6498') ? 'Head of Data and Analytics' : 'Chief Information Security Officer';
-                echo "<p><strong>This position reports directly to:</strong> " . htmlspecialchars($reports_to) . "</p>";
-                echo "</section><hr />";
+        
+                echo "<h3>Preferred Qualifications</h3><ul>";
+                foreach (json_decode($row['preferred_qualifications'], true) as $item) {
+                    echo "<li>" . htmlspecialchars($item) . "</li>";
+                }
+                echo "</ul><hr>";
               }
             } else {
               echo "<p>No job listings available at this time.</p>";
