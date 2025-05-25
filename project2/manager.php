@@ -1,23 +1,24 @@
 <!doctype html>
-<?php include "header.inc"; ?>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TeamWebDev" />
-    <meta name="description" content="homepage" />
-    <meta name="keywords" content="Assignment 1" />
+    <meta name="description" content="Page for Managers to Manage EOIs" />
+    <meta name="keywords" content="Assignment 2" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
 
     <title>EOI Manager</title>
   </head>
   <body>
+  <?php include "header.inc"; ?>
     <main id="manager-page-main">
-    This is the manager page yay
+        <p>This is the manager page yay</p>
     </main>
+    <?php include "footer.inc"; ?>
   </body>
 </html>
 
-<?php include "footer.inc";
-?>
+

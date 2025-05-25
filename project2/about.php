@@ -1,8 +1,6 @@
 <!--This is the about page, -->
 <!doctype html>
-<?php
-  include 'header.inc';
-?>
+<?php include "header.inc"; ?>
 
 <html lang="en">
   <head>
@@ -141,6 +139,5 @@
   </body>
 </html>
 
-<?php
-include 'footer.inc';
+<?php include "footer.inc";
 ?>
