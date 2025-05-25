@@ -14,7 +14,8 @@
   </head>
   <body>
   <?php include "header.inc"; ?>
-    <main id="manager-page-main">
+    <main class="main">
+        <h2>Manager</h2>
         <p>This is the manager page yay</p>
     </main>
     <?php include "footer.inc"; ?>

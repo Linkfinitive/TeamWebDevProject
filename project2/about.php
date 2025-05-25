@@ -15,7 +15,7 @@
     <title>About Us</title>
   </head>
   <body>
-    <main id="about-page-main">
+    <main class="main">
       <h2>About Us</h2>
       <!-- Photo of the team -->
       <div id="team-photo">

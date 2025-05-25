@@ -8,10 +8,8 @@
 }
 
 .homepage-sections,
-#title-and-sections,
-#about-page-main,
-#apply-page-main,
-#manager-page-main {
+.main,
+#title-and-sections {
   padding: 5px 20px;
   margin: 5px;
   border-radius: 8px;

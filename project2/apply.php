@@ -62,7 +62,7 @@ mysqli_close($conn);
 
   <body>
     <!--This is the form thats filled and displayed in another page -->
-    <main id="apply-page-main">
+    <main class="main">
       <h2>Application Form</h2>
       <form
         action="process_eoi.php"
