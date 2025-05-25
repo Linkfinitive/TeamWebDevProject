@@ -1,4 +1,5 @@
 <?php
+
 //Check if we got here through the form.
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: error.php");
@@ -6,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 //Getting the data
-$reference = sanitise_input($_POST["RefNum"]);
+$reference = sanitise_input($_POST["refnum"]);
 $first_name = sanitise_input($_POST["Name"]);
 $surname = sanitise_input($_POST["Lname"]);
 $street_address = sanitise_input($_POST["Address"]);
@@ -189,7 +190,10 @@ function form_data_is_valid(
 
     $skills_array = explode(", ", $skills);
     $count = count($skills_array);
-    if ($skills_array[$count - 1] == "6" && empty($extended_skills)) {
+    if (
+        $skills_array[$count - 1] == "Other (please specify)" &&
+        empty($extended_skills)
+    ) {
         return false;
     }
 
