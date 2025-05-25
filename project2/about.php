@@ -112,7 +112,7 @@
       
 
       <!--Members and their interests-->
-      <section id="interests-table">
+      <section class="interests-table">
         <h2>Our Interests</h2>
         <table>
           <tr>

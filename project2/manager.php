@@ -71,6 +71,7 @@
 
         //Displaying the table
         if (mysqli_num_rows($result) > 0) {
+            echo "<div class=\"interests-table\">";
             echo "<table>";
             echo "<tr>
             <th>EOI ID</th>
@@ -84,6 +85,10 @@
             <th>EOI Status</th>
             </tr>";
             while ($row = mysqli_fetch_assoc($result)) {
+                $extended_skills =
+                    $row["extended_skills"] == ""
+                        ? "None specified"
+                        : $row["extended_skills"];
                 echo "<tr>";
                 echo "<td>" . $row["id"] . "</td>";
                 echo "<td>" . $row["reference"] . "</td>";
@@ -104,11 +109,12 @@
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>" . $row["phone"] . "</td>";
                 echo "<td>" . $row["skills"] . "</td>";
-                echo "<td>" . $row["extended_skills"] . "</td>";
+                echo "<td>" . $extended_skills . "</td>";
                 echo "<td>" . $row["status"] . "</td>";
                 echo "</tr>";
             }
             echo "</table>";
+            echo "</div>";
         } else {
             echo " There are no EOI's to display.";
         }

@@ -115,18 +115,18 @@ aside {
   width: 25vh;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-#interests-table table {
+.interests-table table {
   border-radius: 8px;
 }
 
-#interests-table th,
-#interests-table td {
+.interests-table th,
+.interests-table td {
   background-color: #dda0dd;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-#interests-table th:hover,
-#interests-table td:hover {
+.interests-table th:hover,
+.interests-table td:hover {
   background-color: #c1a0dd;
 }
 

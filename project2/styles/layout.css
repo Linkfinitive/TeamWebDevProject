@@ -70,11 +70,17 @@ aside {
   text-align: center;
 }
 
-#interests-table {
+.interests-table {
   display: flex;
   flex-direction: column;
   justify-items: center;
   text-align: center;
+}
+
+.interests-table td,
+.interests-table th {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Layouts for Apply */
