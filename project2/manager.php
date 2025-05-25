@@ -1,7 +1,5 @@
 <!doctype html>
-<?php
-  include 'header.inc';
-?>
+<?php include "header.inc"; ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,10 +13,11 @@
     <title>EOI Manager</title>
   </head>
   <body>
+    <main id="manager-page-main">
     This is the manager page yay
+    </main>
   </body>
 </html>
 
-<?php
-include 'footer.inc';
+<?php include "footer.inc";
 ?>
