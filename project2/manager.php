@@ -31,15 +31,15 @@
         </form>
         <br />
         <h4>Update EOI Status</h4>
-        <form method="POST" action="update-eoi-status.php">
+        <form method="POST" action="update_eoi_status.php">
             <label for="id">EOI ID</label>
             <input id="id" type="text" placeholder="EOI ID" name="id" required>
             <label for="status"><br /><br />Updated Status</label>
             <select id="status" name="status">
             <option value="">Select</option>
-                <option value="new">New</option>
-                <option value="current">Current</option>
-                <option value="final">Final</option></select>
+                <option value="New">New</option>
+                <option value="Current">Current</option>
+                <option value="Final">Final</option></select>
             <input type="submit" value="Update">
         </form>
         <br />
