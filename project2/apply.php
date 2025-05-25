@@ -3,12 +3,6 @@
 <?php include "header.inc"; 
 require_once("settings.php");
 
-// Fetch job reference numbers
-$conn = mysqli_connect($host, $user, $pwd, $sql_db);
-if (!$conn) {
-    die("Database connection failure.");
-}
-
 $query = "SELECT job_id, job_ref, essential_qualifications FROM jobs";
 $result = mysqli_query($conn, $query);
 

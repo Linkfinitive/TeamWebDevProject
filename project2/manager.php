@@ -16,7 +16,85 @@
   <?php include "header.inc"; ?>
     <main class="main">
         <h2>Manager</h2>
-        <p>This is the manager page yay</p>
+        <form method="GET" action="manager.php">
+            <label for="search">Search</label>
+            <input id="search" type="text" name="search">
+            <input type="submit" value="Go">
+        </form>
+        <br />
+        <?php
+        require_once "settings.php";
+
+        //Setting and executing the query
+        if (isset($_GET["search"])) {
+            $stmt = $conn->prepare(
+                "SELECT * FROM eoi WHERE reference LIKE ? OR first_name LIKE ? OR surname LIKE ?"
+            );
+
+            if (!$stmt) {
+                $stmt->close();
+                mysqli_close($conn);
+                header("Location: error.php");
+                exit();
+            }
+
+            $param = "%" . trim($_GET["search"]) . "%";
+
+            $bind_success = $stmt->bind_param("sss", $param, $param, $param);
+
+            if (!$bind_success) {
+                $stmt->close();
+                mysqli_close($conn);
+                header("Location: error.php");
+                exit();
+            }
+
+            $success = $stmt->execute();
+            if (!$success) {
+                $stmt->close();
+                mysqli_close($conn);
+                header("Location: error.php");
+                exit();
+            }
+            $result = $stmt->get_result();
+            $stmt->close();
+        } else {
+            $query = "SELECT * FROM eoi";
+            $result = mysqli_query($conn, $query);
+            if (!$result) {
+                mysqli_close($conn);
+                header("Location: error.php");
+                exit();
+            }
+        }
+        mysqli_close($conn);
+
+        //Displaying the table
+        if (mysqli_num_rows($result) > 0) {
+            echo "<table>";
+            echo "<tr>
+            <th>EOI ID</th>
+            <th>Job Reference</th>
+            <th>Applicant Name</th>
+            <th>Applicant Address</th>
+            <th>Applicant Email</th>
+            <th>Applicant Phone</th>
+            <th>Applicant Skills</th>
+            <th>Other Skills</th>
+            <th>EOI Status</th>
+            </tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo " There are no EOI's to display.";
+        }
+
+        mysqli_close($conn);
+        ?>
     </main>
     <?php include "footer.inc"; ?>
   </body>
