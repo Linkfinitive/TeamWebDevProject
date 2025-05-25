@@ -118,14 +118,14 @@ mysqli_close($conn);
           <label for="state">State:</label>
           <select id="state" name="State">
             <option value="">Please Select</option>
-            <option value="vic">Victoria</option>
-            <option value="nsw">New South Wales</option>
-            <option value="qld">Queensland</option>
-            <option value="nt">Northern Territory</option>
-            <option value="wa">Western Australia</option>
-            <option value="sa">South Australia</option>
-            <option value="tas">Tasmania</option>
-            <option value="act">Australia Capital Territory</option>
+            <option value="VIC">Victoria</option>
+            <option value="NSW">New South Wales</option>
+            <option value="QLD">Queensland</option>
+            <option value="NT">Northern Territory</option>
+            <option value="WA">Western Australia</option>
+            <option value="SA">South Australia</option>
+            <option value="TAS">Tasmania</option>
+            <option value="ACT">Australia Capital Territory</option>
           </select>
           <!--Textbox for postcode, address and town-->
           <label for="pc">Postcode:</label>

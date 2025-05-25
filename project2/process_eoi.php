@@ -159,14 +159,14 @@ function form_data_is_valid(
     }
     if (
         empty($state) ||
-        ($state != "vic" &&
-            $state != "nsw" &&
-            $state != "tas" &&
-            $state != "qld" &&
-            $state != "act" &&
-            $state != "wa" &&
-            $state != "sa" &&
-            $state != "nt")
+        ($state != "VIC" &&
+            $state != "NSW" &&
+            $state != "TAS" &&
+            $state != "QLD" &&
+            $state != "ACT" &&
+            $state != "WA" &&
+            $state != "SA" &&
+            $state != "NT")
     ) {
         return false;
     }
@@ -206,7 +206,7 @@ function postcode_matches_state($state, $postcode)
     // https://en.wikipedia.org/wiki/Postcodes_in_Australia
     switch ($state) {
         // Directly use $state as it's already lowercase
-        case "vic":
+        case "VIC":
             if (
                 ($postcode >= 3000 && $postcode <= 3996) ||
                 ($postcode >= 8000 && $postcode <= 8999)
@@ -214,7 +214,7 @@ function postcode_matches_state($state, $postcode)
                 return true;
             }
             break;
-        case "nsw":
+        case "NSW":
             if (
                 ($postcode >= 1000 && $postcode <= 2599) ||
                 ($postcode >= 2619 && $postcode <= 2899) ||
@@ -223,12 +223,12 @@ function postcode_matches_state($state, $postcode)
                 return true;
             }
             break;
-        case "tas":
+        case "TAS":
             if ($postcode >= 7000 && $postcode <= 7999) {
                 return true;
             }
             break;
-        case "act":
+        case "ACT":
             if (
                 ($postcode >= 200 && $postcode <= 299) ||
                 ($postcode >= 2600 && $postcode <= 2618) ||
@@ -237,22 +237,22 @@ function postcode_matches_state($state, $postcode)
                 return true;
             }
             break;
-        case "wa":
+        case "WA":
             if ($postcode >= 6000 && $postcode <= 6999) {
                 return true;
             }
             break;
-        case "sa":
+        case "SA":
             if ($postcode >= 5000 && $postcode <= 5999) {
                 return true;
             }
             break;
-        case "nt":
+        case "NT":
             if ($postcode >= 800 && $postcode <= 999) {
                 return true;
             }
             break;
-        case "qld":
+        case "QLD":
             if (
                 ($postcode >= 4000 && $postcode <= 4999) ||
                 ($postcode >= 9000 && $postcode <= 9999)
