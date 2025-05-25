@@ -16,11 +16,33 @@
   <?php include "header.inc"; ?>
     <main class="main">
         <h2>Manager</h2>
+        <h4>Search EOIs</h4>
         <form method="GET" action="manager.php">
-            <label for="search">Search</label>
-            <input id="search" type="text" name="search">
+            <label for="search">Applicant Name or Job Reference </label>
+            <input id="search" type="text" name="search" placeholder="Name or Reference">
             <input type="submit" value="Go">
         </form>
+        <br />
+        <h4>Delete EOIs by Job Reference</h4>
+        <form method="POST" action="delete-eoi.php">
+            <label for="reference">Job Reference </label>
+            <input id="reference" type="text" placeholder="Job Reference" name="reference" required>
+            <input type="submit" value="Delete">
+        </form>
+        <br />
+        <h4>Update EOI Status</h4>
+        <form method="POST" action="update-eoi-status.php">
+            <label for="id">EOI ID</label>
+            <input id="id" type="text" placeholder="EOI ID" name="id" required>
+            <label for="status"><br /><br />Updated Status</label>
+            <select id="status" name="status">
+            <option value="">Select</option>
+                <option value="new">New</option>
+                <option value="current">Current</option>
+                <option value="final">Final</option></select>
+            <input type="submit" value="Update">
+        </form>
+        <br />
         <br />
         <?php
         require_once "settings.php";
