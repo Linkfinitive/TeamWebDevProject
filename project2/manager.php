@@ -86,6 +86,26 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["reference"] . "</td>";
+                echo "<td>" .
+                    $row["first_name"] .
+                    " " .
+                    $row["surname"] .
+                    "</td>";
+                echo "<td>" .
+                    $row["street_address"] .
+                    ", " .
+                    $row["suburb"] .
+                    ", " .
+                    $row["state"] .
+                    " " .
+                    $row["postcode"] .
+                    "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["phone"] . "</td>";
+                echo "<td>" . $row["skills"] . "</td>";
+                echo "<td>" . $row["extended_skills"] . "</td>";
+                echo "<td>" . $row["status"] . "</td>";
                 echo "</tr>";
             }
             echo "</table>";
