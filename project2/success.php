@@ -18,13 +18,20 @@
         <?php include "header.inc"; ?>
         <main class="main">
             <p>Your item was submited successfully!</p>
-            <p>Your EOI is: </p>
+            <p>Your EOI ID Number is: </p>
 
             <?php
             require_once "settings.php";
             $result = mysqli_query($conn, "SELECT MAX(id) AS id FROM eoi");
-            $eoid = mysqli_fetch_row($result);
-            echo [$eoid];
+            mysqli_close($conn);
+
+            if (!$result) {
+                header("Location: error.php");
+                exit();
+            }
+
+            $row = mysqli_fetch_assoc($result);
+            echo $row["id"];
             ?>
 
         </main>
