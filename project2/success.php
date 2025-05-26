@@ -12,6 +12,13 @@
     <p>Your EOI is: </p>
 </body>
 
+<?php
+    require_once 'process_eoi.php';
+    $result = mysqli_query($conn,"SELECT MAX(id) AS id FROM eoi");
+    $eoid = mysqli_fetch_row($result);
+    echo[$eoid];
+?>
+
 <?php include "footer.inc"; ?>
 
 
