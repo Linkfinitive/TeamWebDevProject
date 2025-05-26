@@ -7,8 +7,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TeamWebDev" />
-    <meta name="description" content="WRITE DESCRIPTION HERE" />
-    <meta name="keywords" content="WRITE KEYWORDS HERE" />
+    <meta name="description" content="About the team" />
+    <meta name="keywords" content="Team web dev" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
 

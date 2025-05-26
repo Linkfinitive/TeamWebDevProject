@@ -9,6 +9,7 @@
         <a href="apply.php">Apply</a>
         <a href="about.php">About</a>
         <a href="manager.php">Manage</a>
+        <a href="enhancements.php"> Enhancement </a>
         <a href="mailto:info@swinovatech.com.au">Email Us</a>
     </nav>
 </header>
