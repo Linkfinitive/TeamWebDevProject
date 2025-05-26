@@ -1,24 +1,34 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="TeamWebDev" />
+        <meta name="description" content="successpage" />
+        <meta name="keywords" content="Assignment 2" />
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <link rel="stylesheet" href="./styles/layout.css" />
+    </head>
 
-<?php if (!$_SERVER["HTTP_REFERER"]) {
-    header("Location: error.php");
-    exit();
-} ?>
+    <?php if (!$_SERVER["HTTP_REFERER"]) {
+        header("Location: error.php");
+        exit();
+    } ?>
 
-<?php include "header.inc"; ?>
+    <body>
+        <?php include "header.inc"; ?>
+        <main class="main">
+            <p>Your item was submited successfully!</p>
+            <p>Your EOI is: </p>
 
-<body>
-    <p>Your item was submitted successfully!</p>
-    <p>Your EOI is: </p>
-</body>
+            <?php
+            require_once "settings.php";
+            $result = mysqli_query($conn, "SELECT MAX(id) AS id FROM eoi");
+            $eoid = mysqli_fetch_row($result);
+            echo [$eoid];
+            ?>
 
-<?php
-    require_once 'settings.php';
-    $result = mysqli_query($conn,"SELECT MAX(id) AS id FROM eoi");
-    $eoid = mysqli_fetch_row($result);
-    echo[$eoid];
-?>
-
-<?php include "footer.inc"; ?>
-
+        </main>
+        <?php include "footer.inc"; ?>
+    </body>
+<html>
 
