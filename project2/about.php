@@ -1,8 +1,6 @@
 <!--This is the about page, -->
 <!doctype html>
-<?php
-  include 'header.inc';
-?>
+<?php include "header.inc"; ?>
 
 <html lang="en">
   <head>
@@ -17,7 +15,7 @@
     <title>About Us</title>
   </head>
   <body>
-    <main id="about-page-main">
+    <main class="main">
       <h2>About Us</h2>
       <!-- Photo of the team -->
       <div id="team-photo">
@@ -114,7 +112,7 @@
       
 
       <!--Members and their interests-->
-      <section id="interests-table">
+      <section class="interests-table">
         <h2>Our Interests</h2>
         <table>
           <tr>
@@ -141,6 +139,5 @@
   </body>
 </html>
 
-<?php
-include 'footer.inc';
+<?php include "footer.inc";
 ?>

@@ -1,22 +1,62 @@
 <!--This is the apply page, -->
 <!doctype html>
-<?php
-  include 'header.inc';
+<?php include "header.inc"; 
+require_once("settings.php");
+
+$query = "SELECT job_id, job_ref, essential_qualifications FROM jobs";
+$result = mysqli_query($conn, $query);
+
+$jobs = [];
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $decoded = json_decode($row['essential_qualifications'], true);
+      $jobs[$row['job_ref']] = is_array($decoded) ? $decoded : [];
+      
+    }
+}
+mysqli_close($conn);
 ?>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TeamWebDev" />
-    <meta name="description" content="WRITE DESCRIPTION HERE" />
-    <meta name="keywords" content="WRITE KEYWORDS HERE" />
+    <meta name="description" content="Apply for a role" />
+    <meta name="keywords" content="application, jobs" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
     <title>Swinburne Data Solutions</title>
+    <script>
+    const jobQualifications = <?php echo json_encode($jobs); ?>;
+
+    function updateQualifications() {
+      const refNum = document.getElementById("refnum").value;
+      const wrapper = document.getElementById("qualifications-wrapper");
+      wrapper.innerHTML = "";
+
+      if (refNum && jobQualifications[refNum]) {
+        const quals = jobQualifications[refNum];
+        if (quals.length > 0) {
+          quals.forEach((qual, index) => {
+            const checkboxId = "qual" + index;
+            wrapper.innerHTML += `
+              <label><input type="checkbox" name="qualifications[]" id="${checkboxId}" value="${qual.trim()}"> ${qual.trim()}</label><br />
+            `;
+          });
+        } else {
+          wrapper.innerHTML = "<p>No qualifications listed for this job.</p>";
+        }
+      } else {
+        wrapper.innerHTML = "<p>Please select a Job Reference Number.</p>";
+      }
+    }
+  </script>
   </head>
+
   <body>
     <!--This is the form thats filled and displayed in another page -->
-    <main id="apply-page-main">
+    <main class="main">
       <h2>Application Form</h2>
       <form
         action="process_eoi.php"
@@ -24,13 +64,14 @@
       >
         <!--Dropdown box-->
         <fieldset>
-          <legend>Job Reference Number</legend>
-          <label for="refnum">Job Reference Number:</label>
-          <select id="refnum" name="RefNum" required>
-            <option value="">Please Select</option>
-            <option value="6498">JVC27-6498</option>
-            <option value="4755">JVC27-4755</option>
-          </select>
+        <legend>Job Details</legend>
+        <label for="refnum">Job Reference Number:</label>
+        <select name="refnum" id="refnum" required onchange="updateQualifications()">
+          <option value="">-- Select Job Reference --</option>
+          <?php foreach ($jobs as $jobRef => $quals): ?>
+            <option value="<?= htmlspecialchars($jobRef) ?>"><?= htmlspecialchars($jobRef) ?></option>
+          <?php endforeach; ?>
+        </select>
         </fieldset>
         <!--Textbox for first, last name and date of birth -->
         <fieldset>
@@ -77,14 +118,14 @@
           <label for="state">State:</label>
           <select id="state" name="State">
             <option value="">Please Select</option>
-            <option value="vic">Victoria</option>
-            <option value="nsw">New South Wales</option>
-            <option value="qld">Queensland</option>
-            <option value="nt">Northern Territory</option>
-            <option value="wa">Western Australia</option>
-            <option value="sa">South Australia</option>
-            <option value="tas">Tasmania</option>
-            <option value="act">Australia Capital Territory</option>
+            <option value="VIC">Victoria</option>
+            <option value="NSW">New South Wales</option>
+            <option value="QLD">Queensland</option>
+            <option value="NT">Northern Territory</option>
+            <option value="WA">Western Australia</option>
+            <option value="SA">South Australia</option>
+            <option value="TAS">Tasmania</option>
+            <option value="ACT">Australia Capital Territory</option>
           </select>
           <!--Textbox for postcode, address and town-->
           <label for="pc">Postcode:</label>
@@ -132,79 +173,10 @@
           />
         </fieldset>
         <!--Checkbox for qualifications-->
-        <fieldset>
-          <legend>Qualifications</legend>
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual2"
-              value="1"
-              checked
-            />
-
-            A Bachelor's degree in a relevant field</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual3"
-              value="2"
-            />
-            Proficiency in basic job tools (e.g., SQL, Python, cybersecurity
-            tools)</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual4"
-              value="3"
-            />
-            Valid Professional certification (CISSP, CEH, etc.)</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual5"
-              value="4"
-            />
-            Experience with cloud-based solutions (AWS, Azure, Google
-            Cloud)</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual6"
-              value="5"
-            />
-            Strong analytical and problem-solving skills</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual8"
-              value="6"
-            />
-            Familiarity with data visualisation tools (only for Data
-            Analyst)</label
-          ><br />
-          <label
-            ><input
-              type="checkbox"
-              name="qualifications[]"
-              id="qual9"
-              value="7"
-            />
-            Experience with penetration testing (only for Cybersecurity
-            Specialist)</label
-          ><br />
-
-          <br />
+        <legend>Qualifications</legend>
+        <div id="qualifications-wrapper">
+          <p>Please select a Job Reference Number to view qualifications.</p>
+        </div>
           <!--Textbox for other skills -->
           <label for="extra">Other Skills:</label><br />
           <textarea
@@ -225,6 +197,5 @@
   </body>
 </html>
 
-<?php
-include 'footer.inc';
+<?php include "footer.inc";
 ?>
