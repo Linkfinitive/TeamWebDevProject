@@ -1,79 +1,56 @@
 <!--This is the apply page, -->
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+  
 <?php include "header.inc"; 
-require_once("settings.php");
+require_once("settings.php"); 
 
-$query = "SELECT job_id, job_ref, essential_qualifications FROM jobs";
+// Fetch all jobs from database for dropdown
+$query = "SELECT job_id, job_ref FROM jobs";
 $result = mysqli_query($conn, $query);
 
 $jobs = [];
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
-      $decoded = json_decode($row['essential_qualifications'], true);
-      $jobs[$row['job_ref']] = is_array($decoded) ? $decoded : [];
-      
+        $jobs[] = $row['job_ref'];
     }
 }
 mysqli_close($conn);
 ?>
 
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="TeamWebDev" />
-    <meta name="description" content="Apply for a role" />
-    <meta name="keywords" content="application, jobs" />
+    <meta name="description" content="application form" />
+    <meta name="keywords" content="jobs, applicants" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
     <title>Swinburne Data Solutions</title>
-    <script>
-    const jobQualifications = <?php echo json_encode($jobs); ?>;
-
-    function updateQualifications() {
-      const refNum = document.getElementById("refnum").value;
-      const wrapper = document.getElementById("qualifications-wrapper");
-      wrapper.innerHTML = "";
-
-      if (refNum && jobQualifications[refNum]) {
-        const quals = jobQualifications[refNum];
-        if (quals.length > 0) {
-          quals.forEach((qual, index) => {
-            const checkboxId = "qual" + index;
-            wrapper.innerHTML += `
-              <label><input type="checkbox" name="qualifications[]" id="${checkboxId}" value="${qual.trim()}"> ${qual.trim()}</label><br />
-            `;
-          });
-        } else {
-          wrapper.innerHTML = "<p>No qualifications listed for this job.</p>";
-        }
-      } else {
-        wrapper.innerHTML = "<p>Please select a Job Reference Number.</p>";
-      }
-    }
-  </script>
   </head>
-
   <body>
     <!--This is the form thats filled and displayed in another page -->
-    <main class="main">
+    <main id="apply-page-main">
       <h2>Application Form</h2>
       <form
         action="process_eoi.php"
         method="post"
-      >
-        <!--Dropdown box-->
+      >       
+        <!-- Job Reference Selection -->
         <fieldset>
-        <legend>Job Details</legend>
-        <label for="refnum">Job Reference Number:</label>
-        <select name="refnum" id="refnum" required onchange="updateQualifications()">
-          <option value="">-- Select Job Reference --</option>
-          <?php foreach ($jobs as $jobRef => $quals): ?>
-            <option value="<?= htmlspecialchars($jobRef) ?>"><?= htmlspecialchars($jobRef) ?></option>
-          <?php endforeach; ?>
-        </select>
+          <legend>Job Details</legend>
+          <label for="refnum">Job Reference Number:</label>
+          <select name="refnum" id="refnum" required>
+            <option value="">-- Select Job Reference --</option>
+            <?php foreach ($jobs as $jobRef): ?>
+              <option value="<?= htmlspecialchars($jobRef) ?>">
+                <?= htmlspecialchars($jobRef) ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
         </fieldset>
-        <!--Textbox for first, last name and date of birth -->
+
+        <!-- Personal Information Fields -->
         <fieldset>
           <legend>Personal Information</legend>
           <label for="name">First Name:</label>
@@ -100,7 +77,8 @@ mysqli_close($conn);
           <label for="dob">Date of Birth:</label>
           <input type="date" id="dob" name="DOB" required />
         </fieldset>
-        <!--Radio buttons for gender -->
+
+        <!-- Gender Selection -->
         <fieldset>
           <legend>Gender</legend>
           <input type="radio" id="male" name="Gender" value="Male" checked />
@@ -112,22 +90,34 @@ mysqli_close($conn);
           <input type="radio" id="other" name="Gender" value="Other" />
           <label for="other">Other</label>
         </fieldset>
-        <!--Drop down box for state -->
+
+        <!-- Address Information -->
         <fieldset>
           <legend>Address</legend>
           <label for="state">State:</label>
           <select id="state" name="State">
             <option value="">Please Select</option>
-            <option value="VIC">Victoria</option>
-            <option value="NSW">New South Wales</option>
-            <option value="QLD">Queensland</option>
-            <option value="NT">Northern Territory</option>
-            <option value="WA">Western Australia</option>
-            <option value="SA">South Australia</option>
-            <option value="TAS">Tasmania</option>
-            <option value="ACT">Australia Capital Territory</option>
+            <?php 
+            // Define Australian states
+            $states = [
+                'VIC' => 'Victoria',
+                'NSW' => 'New South Wales', 
+                'QLD' => 'Queensland',
+                'NT' => 'Northern Territory',
+                'WA' => 'Western Australia',
+                'SA' => 'South Australia',
+                'TAS' => 'Tasmania',
+                'ACT' => 'Australia Capital Territory'
+            ];
+            // Generate state options
+            foreach ($states as $code => $name):
+            ?>
+            <option value="<?= $code ?>">
+              <?= $name ?>
+            </option>
+            <?php endforeach; ?>
           </select>
-          <!--Textbox for postcode, address and town-->
+
           <label for="pc">Postcode:</label>
           <input
             type="text"
@@ -139,9 +129,6 @@ mysqli_close($conn);
             pattern="^(0[289][0-9]{2}|[1-9][0-9]{3})$"
             required
           />
-          <!-- This regex pattern was devised with the help of this stack overflow article -->
-          <!-- https://stackoverflow.com/questions/6319799/regex-for-validating-postcode-and-phone-number -->
-          <!-- It allows numbers 0200-0299, 0800-0999 and 1000-9999 which is based on Auspost requirements-->
 
           <label for="adr">Address:</label>
           <input type="text" id="adr" name="Address" required maxlength="40" />
@@ -149,7 +136,8 @@ mysqli_close($conn);
           <label for="town">Town or Suburb:</label>
           <input type="text" id="town" name="Town" required maxlength="40" />
         </fieldset>
-        <!--Textbox for email address and phone number-->
+
+        <!-- Contact Details -->
         <fieldset>
           <legend>Details</legend>
           <label for="email">Email:</label>
@@ -172,12 +160,44 @@ mysqli_close($conn);
             pattern="[0-9\s]{8,12}"
           />
         </fieldset>
-        <!--Checkbox for qualifications-->
-        <legend>Qualifications</legend>
-        <div id="qualifications-wrapper">
-          <p>Please select a Job Reference Number to view qualifications.</p>
-        </div>
-          <!--Textbox for other skills -->
+
+        <!-- Static Qualifications Section -->
+        <fieldset>
+          <legend>Qualifications</legend>
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual1" value="1" checked />
+            A Bachelor's degree in a relevant field
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual2" value="2" />
+            Proficiency in basic job tools (e.g., SQL, Python, cybersecurity tools)
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual3" value="3" />
+            Valid Professional certification (CISSP, CEH, etc.)
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual4" value="4" />
+            Experience with cloud-based solutions (AWS, Azure, Google Cloud)
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual5" value="5" />
+            Strong analytical and problem-solving skills
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual6" value="6" />
+            Familiarity with data visualisation tools (only for Data Analyst)
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual7" value="7" />
+            Experience with penetration testing (only for Cybersecurity Specialist)
+          </label><br />
+          <label>
+            <input type="checkbox" name="qualifications[]" id="qual8" value="8" />
+            Other skills (please specify below)
+          </label><br />
+
+          <!-- Additional Skills Text Area -->
           <label for="extra">Other Skills:</label><br />
           <textarea
             id="extra"
@@ -188,8 +208,9 @@ mysqli_close($conn);
           ></textarea>
           <br />
         </fieldset>
-        <!--Submit and reset buttons-->
-        <input id="submit-button" type="submit" value="Submit" />
+
+        <!-- Form Submission Buttons -->
+        <input id="submit-button" type="submit" name="submit_application" value="Submit" />
         &nbsp;
         <input id="reset-button" type="reset" value="Reset" />
       </form>
@@ -197,5 +218,4 @@ mysqli_close($conn);
   </body>
 </html>
 
-<?php include "footer.inc";
-?>
+<?php include "footer.inc"; ?>
