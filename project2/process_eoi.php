@@ -58,15 +58,19 @@ $query = "CREATE TABLE IF NOT EXISTS `eoi` (
     `postcode` int(11) NOT NULL,
     `email` varchar(50) NOT NULL,
     `phone` varchar(50) NOT NULL,
-    `skills` varchar(50) NOT NULL,
+    `skills` text NOT NULL,
     `extended_skills` text DEFAULT NULL,
     `status` varchar(50) NOT NULL DEFAULT 'New'
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
 
-if (!($result = mysqli_query($conn, $query))) {
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
     header("Location: error.php");
     exit();
 }
+
+
 
 //Inserting the new value into the DB
 $stmt = $conn->prepare(
