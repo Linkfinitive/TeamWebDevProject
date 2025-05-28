@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<?php include "header.inc"; 
-require_once("settings.php"); 
+<?php
+include "header.inc";
+require_once "settings.php";
 
 // Fetch all jobs from database for dropdown
 $query = "SELECT job_id, job_ref FROM jobs";
@@ -12,7 +13,7 @@ $result = mysqli_query($conn, $query);
 $jobs = [];
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $jobs[] = $row['job_ref'];
+        $jobs[] = $row["job_ref"];
     }
 }
 mysqli_close($conn);
@@ -59,7 +60,7 @@ mysqli_close($conn);
             id="name"
             name="Name"
             maxlength="20"
-            pattern="^[A-Za-z\d]*$"
+            pattern="^[A-Za-z]*$"
             required
           />
 
@@ -69,7 +70,7 @@ mysqli_close($conn);
             id="lname"
             name="Lname"
             maxlength="20"
-            pattern="^[A-Za-z\d]*$"
+            pattern="^[A-Za-z]*$"
             required
           />
           <br />
@@ -97,25 +98,25 @@ mysqli_close($conn);
           <label for="state">State:</label>
           <select id="state" name="State">
             <option value="">Please Select</option>
-            <?php 
+            <?php
             // Define Australian states
             $states = [
-                'VIC' => 'Victoria',
-                'NSW' => 'New South Wales', 
-                'QLD' => 'Queensland',
-                'NT' => 'Northern Territory',
-                'WA' => 'Western Australia',
-                'SA' => 'South Australia',
-                'TAS' => 'Tasmania',
-                'ACT' => 'Australia Capital Territory'
+                "VIC" => "Victoria",
+                "NSW" => "New South Wales",
+                "QLD" => "Queensland",
+                "NT" => "Northern Territory",
+                "WA" => "Western Australia",
+                "SA" => "South Australia",
+                "TAS" => "Tasmania",
+                "ACT" => "Australia Capital Territory",
             ];
             // Generate state options
-            foreach ($states as $code => $name):
-            ?>
+            foreach ($states as $code => $name): ?>
             <option value="<?= $code ?>">
               <?= $name ?>
             </option>
-            <?php endforeach; ?>
+            <?php endforeach;
+            ?>
           </select>
 
           <label for="pc">Postcode:</label>
