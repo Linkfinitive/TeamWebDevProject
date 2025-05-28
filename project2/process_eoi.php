@@ -195,7 +195,7 @@ function form_data_is_valid(
     $skills_array = explode(", ", $skills);
     $count = count($skills_array);
     if (
-        $skills_array[$count - 1] == "Other (please specify)" &&
+        $skills_array[$count - 1] == "8" &&
         empty($extended_skills)
     ) {
         return false;
