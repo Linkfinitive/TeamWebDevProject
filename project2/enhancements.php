@@ -16,7 +16,7 @@ include "header.inc";
   <title>Enhancements</title>
 </head>
 <body>
-  <main>
+  <main class="main">
     <h2>Enhancements Implemented</h2>
     <ol>
       <li>
