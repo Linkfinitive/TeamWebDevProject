@@ -21,7 +21,7 @@
       <div id="team-photo">
         <h2>Our Team</h2>
         <figure>
-          <img src="./images/team.png" alt="A photo of the team" />
+          <img src="./images/team.jpg" alt="A photo of the team" />
           <figcaption>
             Jacob &lpar;left&rpar;, Vidhi &lpar;center&rpar;, and Cliff
             &lpar;right&rpar;.
